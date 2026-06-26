@@ -1,0 +1,6 @@
+{
+  "name": "MetFin India Steel",
+  "description": "Premium 3D animated landing page for MetFin India Steel (MFIS), ISO 9001:2015 certified manufacturers of Bright Steel Bars in Chennai, India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
