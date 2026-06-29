@@ -12,9 +12,10 @@ export default function Machines() {
       make: "Alankar Udyog",
       range: "20mm – 55mm",
       power: "Heavy Duty Rollers",
-      icon: <Sliders size={28} className="text-brand-purple" />,
+      icon: <Sliders size={20} className="text-brand-purple" />,
       purpose: "Axially aligns rough black bars by removing macro bending deflections, preparing them for precision peeling head feeds.",
-      glow: "hover:shadow-[0_0_30px_rgba(197,160,89,0.15)] hover:border-brand-purple/50"
+      glow: "hover:shadow-[0_0_30px_rgba(197,160,89,0.15)] hover:border-brand-purple/50",
+      image: "/src/assets/images/straightening_machine_1782738969372.jpg"
     },
     {
       id: 2,
@@ -22,9 +23,10 @@ export default function Machines() {
       make: "Alankar Udyog",
       range: "28mm – 63mm",
       power: "High-Speed Rotary Cutters",
-      icon: <CircleDot size={28} className="text-brand-yellow" />,
+      icon: <CircleDot size={20} className="text-brand-yellow" />,
       purpose: "Removes outer decarburized skin, steel slags, and surface imperfections to expose pristine interior steel layers.",
-      glow: "hover:shadow-[0_0_30px_rgba(234,219,185,0.15)] hover:border-brand-yellow/50"
+      glow: "hover:shadow-[0_0_30px_rgba(234,219,185,0.15)] hover:border-brand-yellow/50",
+      image: "/src/assets/images/peeling_machine_1782738981455.jpg"
     },
     {
       id: 3,
@@ -32,9 +34,10 @@ export default function Machines() {
       make: "MSD",
       range: "Upto 205mm",
       power: "Heavy Duty Hydraulic Saw",
-      icon: <Scissors size={28} className="text-brand-blue" />,
+      icon: <Scissors size={20} className="text-brand-blue" />,
       purpose: "Performs accurate vertical cuts to divide input steel coils or long finished ground bars into client-specified dimensions.",
-      glow: "hover:shadow-[0_0_30px_rgba(168,145,99,0.15)] hover:border-brand-blue/50"
+      glow: "hover:shadow-[0_0_30px_rgba(168,145,99,0.15)] hover:border-brand-blue/50",
+      image: "/src/assets/images/band_saw_machine_1782738995921.jpg"
     },
     {
       id: 4,
@@ -42,9 +45,10 @@ export default function Machines() {
       make: "Alankar Udyog",
       range: "25mm – 65mm",
       power: "Calibrated Pressure Rollers",
-      icon: <RotateCcw size={28} className="text-brand-silver" />,
+      icon: <RotateCcw size={20} className="text-brand-silver" />,
       purpose: "Compresses peeled bars under extreme radial load to eliminate minor surface ripples and deliver near-perfect circular roundness.",
-      glow: "hover:shadow-[0_0_30px_rgba(223,220,214,0.15)] hover:border-brand-silver/50"
+      glow: "hover:shadow-[0_0_30px_rgba(223,220,214,0.15)] hover:border-brand-silver/50",
+      image: "/src/assets/images/reeling_machine_1782739008625.jpg"
     },
     {
       id: 5,
@@ -52,9 +56,10 @@ export default function Machines() {
       make: "Riat – RG3",
       range: "25mm – 63mm",
       power: "Centerless Precision Wheels",
-      icon: <Target size={28} className="text-brand-orange" />,
+      icon: <Target size={20} className="text-brand-orange" />,
       purpose: "The pinnacle finishing stage. Achieves strict micron-level diameters, removes lobing, and adds a bright silver mirror-like finish.",
-      glow: "hover:shadow-[0_0_30px_rgba(158,128,75,0.15)] hover:border-brand-orange/50"
+      glow: "hover:shadow-[0_0_30px_rgba(158,128,75,0.15)] hover:border-brand-orange/50",
+      image: "/src/assets/images/grinding_machine_1782739023090.jpg"
     }
   ];
 
@@ -91,24 +96,32 @@ export default function Machines() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               onMouseEnter={() => setHoveredCard(m.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              className={`bg-brand-card border border-white/10 p-6 rounded-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${m.glow}`}
+              className={`bg-brand-card border border-white/10 p-5 rounded-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden group ${m.glow}`}
             >
               {/* Header block */}
               <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 group-hover:scale-110 transition-transform">
+                {/* Machine Real Photo Container */}
+                <div className="relative h-48 w-full mb-5 overflow-hidden rounded-lg border border-white/5 bg-black/40">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3 p-2 bg-black/60 rounded-lg border border-white/10 backdrop-blur-sm">
                     {m.icon}
                   </div>
-                  <span className="font-mono text-[0.65rem] text-brand-silver/30 font-bold">
+                  <span className="absolute top-3 right-3 font-mono text-[0.6rem] bg-black/60 px-2 py-0.5 rounded border border-white/10 text-brand-silver/50 font-bold backdrop-blur-sm uppercase">
                     MACH_ID_0{m.id}
                   </span>
                 </div>
 
-                <h3 className="font-display font-bold text-lg md:text-xl text-white tracking-wider uppercase mb-4 leading-tight">
+                <h3 className="font-display font-bold text-lg md:text-xl text-white tracking-wider uppercase mb-3 leading-tight group-hover:text-brand-yellow transition-colors">
                   {m.name}
                 </h3>
 
-                <p className="text-xs text-brand-silver/60 leading-relaxed mb-6 min-h-[72px]">
+                <p className="text-xs text-brand-silver/60 leading-relaxed mb-6 min-h-[64px]">
                   {m.purpose}
                 </p>
               </div>

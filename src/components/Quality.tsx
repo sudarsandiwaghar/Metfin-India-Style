@@ -109,14 +109,28 @@ export default function Quality() {
           <div className="lg:col-span-6 flex flex-col gap-6">
             
             {/* MPI station card */}
-            <div className="bg-brand-card border border-white/10 p-6 rounded-xl relative overflow-hidden shadow-2xl hover:border-brand-blue/30 transition-all">
-              <div className="absolute top-4 right-4 animate-pulse">
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-brand-blue/15 border border-brand-blue/30 text-brand-blue font-mono text-[0.6rem] font-bold">
+            <div className="bg-brand-card border border-white/10 p-5 rounded-xl relative overflow-hidden shadow-2xl hover:border-brand-blue/30 transition-all group">
+              <div className="absolute top-4 right-4 z-10 animate-pulse">
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-brand-blue/90 border border-brand-blue/40 text-white font-mono text-[0.6rem] font-bold backdrop-blur-sm">
                   NDT TESTING ACTIVE
                 </span>
               </div>
 
-              <h3 className="font-display font-bold text-base text-brand-blue tracking-wider uppercase mb-5">
+              {/* Photo of MPI */}
+              <div className="relative h-48 w-full mb-5 overflow-hidden rounded-lg border border-white/5 bg-black/40">
+                <img
+                  src="/src/assets/images/mpi_inspection_machine_1782739038327.jpg"
+                  alt="Magnetic Particle Inspection Machine"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-3 px-2 py-0.5 bg-black/60 text-[0.65rem] font-mono text-brand-yellow border border-white/10 rounded uppercase tracking-wider backdrop-blur-sm">
+                  Vibrant NDT
+                </span>
+              </div>
+
+              <h3 className="font-display font-bold text-base text-brand-blue tracking-wider uppercase mb-4">
                 MAGNETIC PARTICLE INSPECTION (MPI)
               </h3>
 
@@ -144,64 +158,82 @@ export default function Quality() {
               </p>
             </div>
 
-            {/* Precision Gauges Instrument Tray */}
-            <div className="bg-brand-card border border-white/10 p-6 rounded-xl shadow-2xl">
+            {/* Metrology Instruments Calibration Table */}
+            <div className="bg-brand-card border border-white/10 p-5 rounded-xl shadow-2xl">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="font-display font-bold text-xs text-white uppercase tracking-widest flex items-center gap-2">
-                  <Sliders size={16} className="text-brand-purple animate-spin-slow" /> METROLOGY INSTRUMENT TRAY
+                  <TableProperties size={16} className="text-brand-purple animate-pulse" /> OTHER INSTRUMENTS CALIBRATION
                 </h4>
                 <span className="font-mono text-[0.65rem] text-brand-silver/40 uppercase">
-                  9 calibrated units
+                  10 Certified Nodes
                 </span>
               </div>
 
               <p className="text-xs text-brand-silver/60 mb-5 font-sans">
-                We maintain absolute dimensional control with nine high-precision digital micrometers and specialized three-point gauges to identify surface lobing.
+                We maintain strict micro-tolerance accountability. Each physical measurement tool is regularly logged with an active digital asset code.
               </p>
 
-              {/* Grid of Gauges */}
-              <div className="grid grid-cols-3 gap-2">
-                {gauges.map((g) => (
-                  <div
-                    key={g.no}
-                    onMouseEnter={() => setHoveredGauge(g.no)}
-                    onMouseLeave={() => setHoveredGauge(null)}
-                    className={`p-3 rounded border text-left flex flex-col justify-between h-20 transition-all duration-300 relative ${
-                      g.special 
-                        ? "border-brand-yellow/40 bg-brand-yellow/5 hover:bg-brand-yellow/10" 
-                        : "border-white/5 bg-black/40 hover:border-brand-purple/30"
-                    } ${hoveredGauge === g.no ? "scale-105 shadow-xl border-white/20 z-10" : ""}`}
-                  >
-                    <span className="font-mono text-[0.55rem] text-brand-silver/30 block uppercase tracking-wider truncate">
-                      {g.no}
-                    </span>
-                    <div className="mt-1">
-                      <span className={`font-display font-bold text-[0.7rem] block tracking-wider ${g.special ? "text-brand-yellow" : "text-white"}`}>
-                        {g.desc.toUpperCase()}
-                      </span>
-                      <span className="font-mono text-[0.65rem] text-brand-purple font-bold block mt-0.5">
-                        {g.range}
-                      </span>
-                    </div>
-
-                    {g.special && (
-                      <span className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-brand-yellow animate-ping" />
-                    )}
-                  </div>
-                ))}
+              {/* Precise interactive metrology table matching user's document */}
+              <div className="overflow-x-auto rounded-lg border border-white/5">
+                <table className="w-full text-left font-mono text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-black/80 border-b border-white/10 text-[0.65rem] text-brand-silver/50 tracking-wider">
+                      <th className="p-3 uppercase">Gauge Description</th>
+                      <th className="p-3 uppercase">Size (mm)</th>
+                      <th className="p-3 uppercase">Gauge No</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    {[
+                      { desc: "Micrometer", size: "0-25", no: "MFIS-MM-01" },
+                      { desc: "Micrometer", size: "25-50", no: "MFIS-MM-02" },
+                      { desc: "Micrometer", size: "50-75", no: "MFIS-MM-03" },
+                      { desc: "Lobing Micrometer", size: "25-40", no: "MFIS-LMM-04", special: true },
+                      { desc: "Micrometer", size: "0-25", no: "MFIS-MM-05" },
+                      { desc: "Micrometer", size: "25-50", no: "MFIS-MM-06" },
+                      { desc: "Micrometer", size: "25-50", no: "MFIS-MM-07" },
+                      { desc: "Micrometer", size: "50-75", no: "MFIS-MM-08" },
+                      { desc: "Micrometer", size: "50-75", no: "MFIS-MM-09" },
+                      { desc: "MPI Crack Detector", size: "3000 Amps", no: "VNSPL/MCD/140", special: true }
+                    ].map((g) => (
+                      <tr 
+                        key={g.no}
+                        onMouseEnter={() => setHoveredGauge(g.no)}
+                        onMouseLeave={() => setHoveredGauge(null)}
+                        className={`transition-colors duration-200 cursor-pointer ${
+                          g.special 
+                            ? "bg-brand-yellow/[0.02] hover:bg-brand-yellow/[0.08]" 
+                            : "hover:bg-white/[0.04]"
+                        } ${hoveredGauge === g.no ? "bg-white/[0.06]" : ""}`}
+                      >
+                        <td className="p-3 flex items-center gap-2">
+                          {g.special && (
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-ping inline-block" />
+                          )}
+                          <span className={`font-sans font-semibold tracking-wide ${g.special ? "text-brand-yellow" : "text-white"}`}>
+                            {g.desc}
+                          </span>
+                        </td>
+                        <td className="p-3 text-brand-purple font-bold">
+                          {g.size}
+                        </td>
+                        <td className="p-3 text-brand-silver/80">
+                          {g.no}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
 
-              {/* Live Status Description */}
-              <div className="mt-4 p-3 bg-black/40 border border-white/5 rounded text-left">
-                {hoveredGauge ? (
-                  <p className="font-mono text-[0.65rem] text-brand-yellow uppercase tracking-wider">
-                    HOVERED INSTRUMENT: {hoveredGauge} // CALIBRATION: <span className="text-white">VERIFIED / PASS</span>
-                  </p>
-                ) : (
-                  <p className="font-mono text-[0.65rem] text-brand-silver/40 uppercase tracking-wider text-center">
-                    SELECT A GAUGE TO AUDIT SYSTEM CODE
-                  </p>
-                )}
+              {/* Calibration Audit Alert Node */}
+              <div className="mt-4 p-3 bg-black/50 border border-white/5 rounded-lg flex items-center justify-between">
+                <span className="font-mono text-[0.65rem] text-brand-silver/40 uppercase tracking-widest">
+                  STATUS AUDIT:
+                </span>
+                <span className="font-mono text-[0.65rem] text-brand-yellow font-bold uppercase tracking-widest flex items-center gap-1.5 animate-pulse">
+                  <span className="w-2 h-2 rounded-full bg-brand-yellow" /> ALL GAUGES CALIBRATION CURRENT
+                </span>
               </div>
 
             </div>

@@ -205,6 +205,71 @@ export default function About() {
 
         </div>
 
+        {/* Real Plant walkthrough and despatch photos */}
+        <div className="mt-16 pt-16 border-t border-white/5">
+          <div className="flex flex-col mb-10">
+            <span className="font-mono text-xs text-brand-yellow tracking-[0.3em] uppercase mb-2">
+              REAL PLANT VISUALS
+            </span>
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight uppercase">
+              ACTUAL WAREHOUSE & DISPATCH GALLERY
+            </h3>
+            <p className="text-brand-silver/50 font-sans text-xs mt-2 uppercase tracking-widest">
+              Live snapshots of our Ayanambakkam manufacturing floor and packed, color-coded finished bars.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group relative bg-brand-card border border-white/10 p-4 rounded-xl overflow-hidden hover:border-brand-purple/40 transition-all shadow-2xl">
+              <div className="aspect-[16/10] overflow-hidden rounded-lg bg-black">
+                <img
+                  src="/src/assets/images/factory_floor_view_1782739058997.jpg"
+                  alt="MetFin India Steel Factory Floor"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="mt-4 flex items-center justify-between gap-4">
+                <div>
+                  <h4 className="font-display font-bold text-white uppercase tracking-wider text-sm">
+                    Ayanambakkam Manufacturing Floor
+                  </h4>
+                  <p className="text-xs text-brand-silver/60 mt-1 font-sans">
+                    Panoramic overview showing our active machinery line, support frames, and high-safety steel truss channels.
+                  </p>
+                </div>
+                <span className="font-mono text-[0.65rem] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded border border-brand-purple/20 flex-shrink-0 uppercase font-bold">
+                  97 KVA Capacity
+                </span>
+              </div>
+            </div>
+
+            <div className="group relative bg-brand-card border border-white/10 p-4 rounded-xl overflow-hidden hover:border-brand-blue/40 transition-all shadow-2xl">
+              <div className="aspect-[16/10] overflow-hidden rounded-lg bg-black">
+                <img
+                  src="/src/assets/images/ready_despatch_steel_1782739073119.jpg"
+                  alt="MetFin India Steel Finished Bundles"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="mt-4 flex items-center justify-between gap-4">
+                <div>
+                  <h4 className="font-display font-bold text-white uppercase tracking-wider text-sm">
+                    Ready for Despatch Bundles
+                  </h4>
+                  <p className="text-xs text-brand-silver/60 mt-1 font-sans">
+                    Finished bright centerless-ground bars meticulously packed, plastic-shrink wrapped, and purple end color-coded.
+                  </p>
+                </div>
+                <span className="font-mono text-[0.65rem] text-brand-blue bg-brand-blue/10 px-2.5 py-1 rounded border border-brand-blue/20 flex-shrink-0 uppercase font-bold">
+                  QC Passed Tags
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

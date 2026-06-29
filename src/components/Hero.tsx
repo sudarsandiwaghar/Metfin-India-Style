@@ -2,23 +2,9 @@ import React from "react";
 import { motion } from "motion/react";
 import ThreeSteelBar from "./ThreeSteelBar";
 import { ArrowRight, Flame, ShieldCheck, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section className="relative min-h-screen pt-28 md:pt-36 pb-16 flex items-center overflow-hidden bg-brand-bg">
       {/* Dynamic Background Glow Layer */}
@@ -88,20 +74,18 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-12"
           >
-            <a
-              href="#contact"
-              onClick={(e) => handleSmoothScroll(e, "#contact")}
+            <Link
+              to="/contact"
               className="group flex items-center justify-center gap-2 bg-brand-purple hover:bg-brand-purple/95 text-black font-display font-semibold tracking-widest uppercase py-3.5 px-7 rounded-md transition-all duration-300 shadow-[0_0_20px_rgba(197,160,89,0.25)] hover:shadow-[0_0_35px_rgba(197,160,89,0.4)] w-full sm:w-auto"
             >
               Request Quote <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#machines"
-              onClick={(e) => handleSmoothScroll(e, "#machines")}
+            </Link>
+            <Link
+              to="/services"
               className="flex items-center justify-center border border-white/20 hover:border-brand-blue bg-white/5 hover:bg-brand-blue/10 text-white font-display font-semibold tracking-widest uppercase py-3.5 px-7 rounded-md transition-all duration-300 w-full sm:w-auto"
             >
               View Machines
-            </a>
+            </Link>
           </motion.div>
 
           {/* Stats Bar Component */}
