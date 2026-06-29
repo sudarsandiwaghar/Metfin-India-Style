@@ -119,7 +119,7 @@ export default function Quality() {
               {/* Photo of MPI */}
               <div className="relative h-48 w-full mb-5 overflow-hidden rounded-lg border border-white/5 bg-black/40">
                 <img
-                  src="/src/assets/images/mpi_inspection_machine_1782739038327.jpg"
+                  src="/images/mpi_inspection_machine_1782739038327.jpg"
                   alt="Magnetic Particle Inspection Machine"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   referrerPolicy="no-referrer"

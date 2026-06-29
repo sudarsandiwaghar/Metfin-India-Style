@@ -15,7 +15,7 @@ export default function Machines() {
       icon: <Sliders size={20} className="text-brand-purple" />,
       purpose: "Axially aligns rough black bars by removing macro bending deflections, preparing them for precision peeling head feeds.",
       glow: "hover:shadow-[0_0_30px_rgba(197,160,89,0.15)] hover:border-brand-purple/50",
-      image: "/src/assets/images/straightening_machine_1782738969372.jpg"
+      image: "/images/straightening_machine_1782738969372.jpg"
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export default function Machines() {
       icon: <CircleDot size={20} className="text-brand-yellow" />,
       purpose: "Removes outer decarburized skin, steel slags, and surface imperfections to expose pristine interior steel layers.",
       glow: "hover:shadow-[0_0_30px_rgba(234,219,185,0.15)] hover:border-brand-yellow/50",
-      image: "/src/assets/images/peeling_machine_1782738981455.jpg"
+      image: "/images/peeling_machine_1782738981455.jpg"
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export default function Machines() {
       icon: <Scissors size={20} className="text-brand-blue" />,
       purpose: "Performs accurate vertical cuts to divide input steel coils or long finished ground bars into client-specified dimensions.",
       glow: "hover:shadow-[0_0_30px_rgba(168,145,99,0.15)] hover:border-brand-blue/50",
-      image: "/src/assets/images/band_saw_machine_1782738995921.jpg"
+      image: "/images/band_saw_machine_1782738995921.jpg"
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ export default function Machines() {
       icon: <RotateCcw size={20} className="text-brand-silver" />,
       purpose: "Compresses peeled bars under extreme radial load to eliminate minor surface ripples and deliver near-perfect circular roundness.",
       glow: "hover:shadow-[0_0_30px_rgba(223,220,214,0.15)] hover:border-brand-silver/50",
-      image: "/src/assets/images/reeling_machine_1782739008625.jpg"
+      image: "/images/reeling_machine_1782739008625.jpg"
     },
     {
       id: 5,
@@ -59,7 +59,7 @@ export default function Machines() {
       icon: <Target size={20} className="text-brand-orange" />,
       purpose: "The pinnacle finishing stage. Achieves strict micron-level diameters, removes lobing, and adds a bright silver mirror-like finish.",
       glow: "hover:shadow-[0_0_30px_rgba(158,128,75,0.15)] hover:border-brand-orange/50",
-      image: "/src/assets/images/grinding_machine_1782739023090.jpg"
+      image: "/images/grinding_machine_1782739023090.jpg"
     }
   ];
 

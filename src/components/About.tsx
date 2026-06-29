@@ -223,7 +223,7 @@ export default function About() {
             <div className="group relative bg-brand-card border border-white/10 p-4 rounded-xl overflow-hidden hover:border-brand-purple/40 transition-all shadow-2xl">
               <div className="aspect-[16/10] overflow-hidden rounded-lg bg-black">
                 <img
-                  src="/src/assets/images/factory_floor_view_1782739058997.jpg"
+                  src="/images/factory_floor_view_1782739058997.jpg"
                   alt="MetFin India Steel Factory Floor"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   referrerPolicy="no-referrer"
@@ -247,7 +247,7 @@ export default function About() {
             <div className="group relative bg-brand-card border border-white/10 p-4 rounded-xl overflow-hidden hover:border-brand-blue/40 transition-all shadow-2xl">
               <div className="aspect-[16/10] overflow-hidden rounded-lg bg-black">
                 <img
-                  src="/src/assets/images/ready_despatch_steel_1782739073119.jpg"
+                  src="/images/ready_despatch_steel_1782739073119.jpg"
                   alt="MetFin India Steel Finished Bundles"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   referrerPolicy="no-referrer"
